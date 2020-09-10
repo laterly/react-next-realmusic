@@ -1,5 +1,5 @@
 //覆盖next js默认app.js
-import App, { Container } from "next/app";
+import App from "next/app";
 import "antd/dist/antd.css";
 import Layout from "../components/layout.jsx";
 import { Provider } from "react-redux";
@@ -17,13 +17,11 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, reduxStore } = this.props;
     return (
-      <Container>
         <Layout>
           <Provider store={reduxStore}>
             <Component {...pageProps}></Component>
           </Provider>
         </Layout>
-      </Container>
     );
   }
 }

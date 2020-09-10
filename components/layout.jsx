@@ -1,9 +1,13 @@
-import { Layout, Input, Avatar } from "antd";
+import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
+import Head from './head'
+
 const LayoutComp = ({ children }) => {
   return (
     <Layout>
-      <Header></Header>
+      <Header>
+        <Head></Head>
+      </Header>
       <Content>{children}</Content>
       <Footer></Footer>
       <style jsx global>{`

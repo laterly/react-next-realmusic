@@ -1,4 +1,6 @@
-const withCss = require('@zeit/next-css');
+
+const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
 const configs = {
     // 编译文件的输出目录
     distDir: 'dist',
@@ -46,10 +48,10 @@ const configs = {
     },
 }
 if (typeof require !== 'undefined') {
-    require.extensions['.css'] = file => { }
+    require.extensions['.css','.scss'] = file => { }
 }
 
 
-module.exports = withCss({
+module.exports = withSass(withCSS({
     ...configs
-})
+}))
